@@ -1,0 +1,49 @@
+= DynamoDB client Spring Boot starter
+
+:github: https://github.com/wilsonrf/dynamodb-client-test-starter
+:autoconfigureGithubRepo: https://github.com/wilsonrf/dynamodb-client-test-autoconfigure
+
+This project provides a Spring Boot starter for DynamoDB client test auto-configure.
+If you are using Spring Boot and want to test your application with a local DynamoDB, you can use this starter to auto-configure the client.
+
+== Installation
+
+=== Maven
+[source,xml]
+----
+<dependency>
+    <groupId>com.wilsonfranca</groupId>
+    <artifactId>dynamodb-client-test-starter</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <scope>test</scope>
+</dependency>
+----
+=== Gradle Groovy
+[source,groovy]
+----
+testImplementation 'com.wilsonfranca:dynamodb-client-test-starter:1.0.0-SNAPSHOT'
+----
+=== Gradle Kotlin
+[source,kotlin]
+----
+testImplementation("com.wilsonfranca:dynamodb-client-test-starter:1.0.0-SNAPSHOT")
+----
+
+== Reporting Issues
+You can report issues at {github}/issues[GitHub].
+
+== Building from Source
+
+[source,shell]
+----
+$ ./gradlew publishToMavenLocal
+----
+
+[source,shell]
+----
+$ ./gradlew build
+----
+
+== License
+
+DynamoDB client test starter is Open Source software released under the https://www.apache.org/licenses/LICENSE-2.0.html[Apache 2.0 license].
