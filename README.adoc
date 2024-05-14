@@ -9,6 +9,7 @@ If you are using Spring Boot and want to test your application with a local Dyna
 == Installation
 
 === Maven
+
 [source,xml]
 ----
 <dependency>
@@ -18,7 +19,9 @@ If you are using Spring Boot and want to test your application with a local Dyna
     <scope>test</scope>
 </dependency>
 ----
+
 === Gradle Groovy
+
 [source,groovy]
 ----
 testImplementation 'com.wilsonfranca:dynamodb-client-test-starter:1.0.0-SNAPSHOT'
