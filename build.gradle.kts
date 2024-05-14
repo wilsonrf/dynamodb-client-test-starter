@@ -52,12 +52,53 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
+            artifact(tasks["sourcesJar"])
+            artifact(tasks["javadocJar"])
             versionMapping {
                 usage("java-api") {
                     fromResolutionOf("runtimeClasspath")
                 }
                 usage("java-runtime") {
                     fromResolutionResult()
+                }
+            }
+            pom {
+                name = "DynamoDB Client Test Starter"
+                description = "DynamoDB Client Test Spring Boot Starter"
+                url = "https://github.com/wilsonrf/dynamodb-client-starter"
+                licenses {
+                    license {
+                        name = "The Apache License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "wilsonrf"
+                        name = "Wilson da Rocha França"
+                        email = "wilsonrf@gmail.com"
+                    }
+                }
+                scm {
+                    connection = "scm:git:git@github.com:wilsonrf/dynamodb-client-test-starter.git"
+                    developerConnection = "scm:git:git@github.com:wilsonrf/dynamodb-client-test-starter.git"
+                    url = "https://github.com/wilsonrf/dynamodb-client-test-starter"
+                }
+            }
+        }
+
+        repositories {
+            maven {
+                name = "internalRepo"
+                url = uri("${layout.buildDirectory.get()}/repo")
+            }
+
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/wilsonrf/dynamodb-client-test-starter")
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
                 }
             }
         }
