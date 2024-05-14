@@ -4,6 +4,7 @@ plugins {
     id("io.spring.dependency-management")
     id("com.github.ben-manes.versions")
     id("maven-publish")
+    id("signing")
 }
 
 group = "com.wilsonfranca"
