@@ -39,6 +39,15 @@ tasks.register<Jar>("javadocJar") {
     from(tasks["javadoc"].outputs)
 }
 
+val zipArtifacts by tasks.registering(Zip::class) {
+    dependsOn("publishMavenJavaPublicationToInternalRepoRepository")
+    from("${layout.buildDirectory.get()}/repo") {
+        exclude("**/maven-metadata*.*")
+    }
+    archiveFileName.set("${project.name}-${version}.zip")
+    destinationDirectory.set(file("${layout.buildDirectory.get()}/outputs"))
+}
+
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
