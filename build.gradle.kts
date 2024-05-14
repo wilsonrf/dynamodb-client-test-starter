@@ -28,6 +28,17 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.register<Jar>("sourcesJar") {
+    archiveClassifier.set("sources")
+    from(sourceSets["main"].allSource)
+}
+
+tasks.register<Jar>("javadocJar") {
+    dependsOn("javadoc")
+    archiveClassifier.set("javadoc")
+    from(tasks["javadoc"].outputs)
+}
+
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
