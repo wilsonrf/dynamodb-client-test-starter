@@ -8,7 +8,6 @@ plugins {
 }
 
 group = "com.wilsonfranca"
-version = "1.0.0-SNAPSHOT"
 
 repositories {
     mavenLocal()
