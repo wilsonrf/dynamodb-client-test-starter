@@ -104,3 +104,17 @@ publishing {
         }
     }
 }
+
+signing {
+    setRequired {
+        gradle.taskGraph.allTasks.any { it is PublishToMavenLocal }.not()
+    }
+
+    val signingKey: String? by project
+    val signingKeyId: String? by project
+    val signingPassword: String? by project
+
+    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+
+    sign(publishing.publications["mavenJava"])
+}
