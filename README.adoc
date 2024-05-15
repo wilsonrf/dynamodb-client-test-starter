@@ -15,7 +15,7 @@ If you are using Spring Boot and want to test your application with a local Dyna
 <dependency>
     <groupId>com.wilsonfranca</groupId>
     <artifactId>dynamodb-client-test-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <scope>test</scope>
 </dependency>
 ----
@@ -24,12 +24,12 @@ If you are using Spring Boot and want to test your application with a local Dyna
 
 [source,groovy]
 ----
-testImplementation 'com.wilsonfranca:dynamodb-client-test-starter:1.0.0'
+testImplementation 'com.wilsonfranca:dynamodb-client-test-starter:1.0.1-SNAPSHOT'
 ----
 === Gradle Kotlin
 [source,kotlin]
 ----
-testImplementation("com.wilsonfranca:dynamodb-client-test-starter:1.0.0")
+testImplementation("com.wilsonfranca:dynamodb-client-test-starter:1.0.1-SNAPSHOT")
 ----
 
 == Reporting Issues
