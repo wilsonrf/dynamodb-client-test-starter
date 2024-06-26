@@ -20,7 +20,7 @@ dependencyManagement {
     }
 }
 dependencies {
-    api("com.wilsonfranca:dynamodb-client-autoconfigure-test:1.0.1-SNAPSHOT")
+    api("com.wilsonfranca:dynamodb-client-test-autoconfigure:1.0.1-SNAPSHOT")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 
